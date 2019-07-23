@@ -8,7 +8,7 @@ A good looking LaTeX script/screenplay compiler
 ## What does this do?
 
 There's a nice [screenplay LaTeX package](https://www.ctan.org/pkg/screenplay)
-but using it iss not particularly convenient, as the code gets quite verbose.
+but using it is not particularly convenient, as the code gets quite verbose.
 
 Instead let's use an ad-hoc minimal script language and transpile to TeX.
 
