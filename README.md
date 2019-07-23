@@ -1,5 +1,9 @@
+[![Build Status](https://travis-ci.org/jstasiak/scripter.svg?branch=master)](https://travis-ci.org/jstasiak/scripter)
+[![Coverage Status](https://coveralls.io/repos/github/jstasiak/scripter/badge.svg?branch=master)](https://coveralls.io/github/jstasiak/scripter?branch=master)
+
 # scripter
 A good looking LaTeX script/screenplay compiler
+
 
 ## What does this do?
 
