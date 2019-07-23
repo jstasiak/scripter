@@ -41,9 +41,11 @@ EXT. MILITARY BASE -- DAY
 
 COLONEL SMITH smokes a cigarette. Looks up as CAPTAIN PARKER approaches.
 
+CAPTAIN PARKER doesn't look too well.
+
 	SMITH: So, it's begun.
 	PARKER: Yes, it has.
-	SMITH: I was afraid it'd come to this.
+	SMITH: I was afraid it'd come to this.```
 ```
 
 TeX output:
@@ -58,16 +60,23 @@ TeX output:
 \begin{document}
 \coverpage
 \fadein
-
 \intslug{SPACE STATION}
+
 Dark corridor. Something lurks in the shadows.
 
 \extslug{MILITARY BASE -- DAY}
+
 COLONEL SMITH smokes a cigarette. Looks up as CAPTAIN PARKER approaches.
+
+CAPTAIN PARKER doesn't look too well.
+
 \begin{dialogue}{SMITH}So, it's begun.\end{dialogue}
+
 \begin{dialogue}{PARKER}Yes, it has.\end{dialogue}
+
 \begin{dialogue}{SMITH}I was afraid it'd come to this.\end{dialogue}
 
+\fadeout
 \theend
 \end{document}
 ```
