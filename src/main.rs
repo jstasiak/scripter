@@ -1,7 +1,24 @@
+use std::env;
 use std::fs;
+use std::path::Path;
+use std::process;
 
 fn main() {
-    println!("Hello, world!");
+    let args: Vec<String> = env::args().collect();
+    if args.len() != 2 {
+        eprintln!("Usage: {} INPUT", args[0]);
+        process::exit(1);
+    }
+    let input_path = Path::new(&args[1]);
+    let input = fs::read_to_string(input_path).expect("Cannot read the input file");
+    let tex_output = script_to_tex(&input);
+    let tex_path = input_path.with_extension("tex");
+    fs::write(&tex_path, tex_output).expect("Cannot write to the output file");
+
+    process::Command::new("pdflatex")
+        .args(&[&tex_path.to_str().unwrap()])
+        .status()
+        .expect("Failed to execute pdflatex");
 }
 
 fn script_to_tex(input: &str) -> String {
