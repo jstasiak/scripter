@@ -1,0 +1,7 @@
+/target
+**/*.rs.bk
+
+# LaTeX stuff
+*.aux
+*.log
+*.pdf
