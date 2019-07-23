@@ -50,9 +50,9 @@ fn script_to_tex(input: &str) -> String {
     for line in lines {
         output.extend(
             if line[..5] == *"INT. " {
-                format!("\n\\intslug{{{}}}", &line[5..])
+                format!("\\intslug{{{}}}", &line[5..])
             } else if line[..5] == *"EXT. " {
-                format!("\n\\extslug{{{}}}", &line[5..])
+                format!("\\extslug{{{}}}", &line[5..])
             } else if line.contains(':') {
                 let parts: Vec<&str> = line.split(':').collect();
                 assert_eq!(parts.len(), 2);
@@ -67,11 +67,10 @@ fn script_to_tex(input: &str) -> String {
             }
             .bytes(),
         );
-        output.extend("\n".bytes());
+        output.extend("\n\n".bytes());
     }
     output.extend(
-        "
-\\theend
+        "\\theend
 \\end{document}\n"
             .bytes(),
     );
