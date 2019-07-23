@@ -71,3 +71,5 @@ COLONEL SMITH smokes a cigarette. Looks up as CAPTAIN PARKER approaches.
 \theend
 \end{document}
 ```
+
+[Output PDF](test_script.pdf)
