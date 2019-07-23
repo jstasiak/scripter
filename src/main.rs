@@ -70,7 +70,8 @@ fn script_to_tex(input: &str) -> String {
         output.extend("\n\n".bytes());
     }
     output.extend(
-        "\\theend
+        "\\fadeout
+\\theend
 \\end{document}\n"
             .bytes(),
     );
