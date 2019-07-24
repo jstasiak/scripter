@@ -22,7 +22,7 @@ Instead let's use an ad-hoc minimal script language and transpile to TeX.
   comes after `INT. ` and `EXT. ` is free-form
 * Lines with `:` in them are split using this character and it's assumed that
   generates two parts. The first is the character that's speaking, the second
-  is what's being said.
+  is what's being said. Parts in parentheses are treated as parentheticals.
 * Other lines are treated as description
 
 ## Example
@@ -44,8 +44,8 @@ COLONEL SMITH smokes a cigarette. Looks up as CAPTAIN PARKER approaches.
 CAPTAIN PARKER doesn't look too well.
 
 	SMITH: So, it's begun.
-	PARKER: Yes, it has.
-	SMITH: I was afraid it'd come to this.```
+	PARKER: Yes. (inhales) Yes, it has.
+	SMITH: I was afraid it'd come to this.
 ```
 
 TeX output:
@@ -72,7 +72,7 @@ CAPTAIN PARKER doesn't look too well.
 
 \begin{dialogue}{SMITH}So, it's begun.\end{dialogue}
 
-\begin{dialogue}{PARKER}Yes, it has.\end{dialogue}
+\begin{dialogue}{PARKER}Yes. \paren{inhales} Yes, it has.\end{dialogue}
 
 \begin{dialogue}{SMITH}I was afraid it'd come to this.\end{dialogue}
 

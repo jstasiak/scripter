@@ -57,7 +57,7 @@ fn script_to_tex(input: &str) -> String {
                 let parts: Vec<&str> = line.split(':').collect();
                 assert_eq!(parts.len(), 2);
                 let speaker = &parts[0];
-                let text = &parts[1].trim();
+                let text = &parts[1].trim().replace('(', "\\paren{").replace(')', "}");
                 format!(
                     "\\begin{{dialogue}}{{{}}}{}\\end{{dialogue}}",
                     speaker, text
