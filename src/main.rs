@@ -23,10 +23,7 @@ fn main() {
 
 fn script_to_tex(input: &str) -> String {
     let mut output: Vec<u8> = Vec::new();
-    let mut lines = input
-        .split('\n')
-        .map(|line| line.trim())
-        .filter(|line| *line != "");
+    let mut lines = input.split('\n').filter(|line| line.trim() != "");
     let title = lines.next().expect("Title not found");
     let author = lines.next().expect("Author not found");
 
@@ -53,7 +50,10 @@ fn script_to_tex(input: &str) -> String {
                 format!("\\intslug{{{}}}", &line[5..])
             } else if line[..5] == *"EXT. " {
                 format!("\\extslug{{{}}}", &line[5..])
-            } else if line.contains(':') {
+            // If we have whitespace at the start of the line trim_start() will return something
+            // different than the original slice and we'll know we have a dialogue.
+            } else if line.trim_start() != line {
+                let line = line.trim();
                 let parts: Vec<&str> = line.splitn(2, ':').collect();
                 assert_eq!(parts.len(), 2);
                 let speaker = &parts[0];

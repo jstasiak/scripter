@@ -17,12 +17,14 @@ Instead let's use an ad-hoc minimal script language and transpile to TeX.
 * Lines with only whitespace in them are ignored
 * The first line is the title
 * The second line is the author(s)
+* Empty lines are ignored
 * Lines beginning with `INT. ` or `EXT. ` are treated as sluglines, what
   comes after `INT. ` and `EXT. ` is free-form
-* Lines with `:` in them are split using this character and it's assumed that
-  generates two parts. The first is the character that's speaking, the second
-  is what's being said. Parts in parentheses are treated as parentheticals.
-  Colon characters other than the first are treated as plain text.
+* Lines beginning with whitespace are assumed to contain dialogue. That requires
+  them to contain at least one `:` character. The part before the first colon is
+  is the character that's speaking, the second is what's being said. Parts in
+  parentheses are treated as parentheticals. Colon characters other than the
+  first are treated as plain text.
 * Other lines are treated as description
 
 ## Example
