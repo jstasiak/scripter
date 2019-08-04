@@ -54,7 +54,7 @@ fn script_to_tex(input: &str) -> String {
             } else if line[..5] == *"EXT. " {
                 format!("\\extslug{{{}}}", &line[5..])
             } else if line.contains(':') {
-                let parts: Vec<&str> = line.split(':').collect();
+                let parts: Vec<&str> = line.splitn(2, ':').collect();
                 assert_eq!(parts.len(), 2);
                 let speaker = &parts[0];
                 let text = &parts[1].trim().replace('(', "\\paren{").replace(')', "}");

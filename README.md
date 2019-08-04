@@ -22,6 +22,7 @@ Instead let's use an ad-hoc minimal script language and transpile to TeX.
 * Lines with `:` in them are split using this character and it's assumed that
   generates two parts. The first is the character that's speaking, the second
   is what's being said. Parts in parentheses are treated as parentheticals.
+  Colon characters other than the first are treated as plain text.
 * Other lines are treated as description
 
 ## Example
@@ -44,7 +45,8 @@ CAPTAIN PARKER doesn't look too well.
 
 	SMITH: So, it's begun.
 	PARKER: Yes. (inhales) Yes, it has.
-	SMITH: I was afraid it'd come to this.
+	SMITH: I was afraid it'd come to this. Look: how about we –
+	PARKER: No.
 ```
 
 TeX output:
@@ -73,7 +75,9 @@ CAPTAIN PARKER doesn't look too well.
 
 \begin{dialogue}{PARKER}Yes. \paren{inhales} Yes, it has.\end{dialogue}
 
-\begin{dialogue}{SMITH}I was afraid it'd come to this.\end{dialogue}
+\begin{dialogue}{SMITH}I was afraid it'd come to this. Look: how about we –\end{dialogue}
+
+\begin{dialogue}{PARKER}No.\end{dialogue}
 
 \fadeout
 \theend
