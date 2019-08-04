@@ -41,7 +41,7 @@ Dark corridor. Something lurks in the shadows.
 
 EXT. MILITARY BASE -- DAY
 
-COLONEL SMITH smokes a cigarette. Looks up as CAPTAIN PARKER approaches.
+COLONEL SMITH smokes a cigarette. There are items on his desk: a bottle of whisky, a gun and a doll. SMITH looks up as CAPTAIN PARKER approaches.
 
 CAPTAIN PARKER doesn't look too well.
 
@@ -49,6 +49,8 @@ CAPTAIN PARKER doesn't look too well.
 	PARKER: Yes. (inhales) Yes, it has.
 	SMITH: I was afraid it'd come to this. Look: how about we –
 	PARKER: No.
+	SMITH: But & % $ # _ { } ~ ^ \
+	PARKER: Hold on, what?
 ```
 
 TeX output:
@@ -69,7 +71,7 @@ Dark corridor. Something lurks in the shadows.
 
 \extslug{MILITARY BASE -- DAY}
 
-COLONEL SMITH smokes a cigarette. Looks up as CAPTAIN PARKER approaches.
+COLONEL SMITH smokes a cigarette. There are items on his desk: a bottle of whisky, a gun and a doll. SMITH looks up as CAPTAIN PARKER approaches.
 
 CAPTAIN PARKER doesn't look too well.
 
@@ -80,6 +82,10 @@ CAPTAIN PARKER doesn't look too well.
 \begin{dialogue}{SMITH}I was afraid it'd come to this. Look: how about we –\end{dialogue}
 
 \begin{dialogue}{PARKER}No.\end{dialogue}
+
+\begin{dialogue}{SMITH}But \& \% \$ \# \_ \{ \} \textasciitilde{} \textasciicircum{} \textbackslash{}\end{dialogue}
+
+\begin{dialogue}{PARKER}Hold on, what?\end{dialogue}
 
 \fadeout
 \theend

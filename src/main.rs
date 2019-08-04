@@ -22,7 +22,26 @@ fn main() {
 }
 
 fn script_to_tex(input: &str) -> String {
+    let latex_escapes = [
+        // Backlash needs to be at the beginning so that we escape backslaches before we attempt
+        // to escape other characters with backslashes.
+        (r"\", r"\textbackslash"),
+        ("&", r"\&"),
+        ("%", r"\%"),
+        ("$", r"\$"),
+        ("#", r"\#"),
+        ("_", r"\_"),
+        ("{", r"\{"),
+        ("}", r"\}"),
+        ("~", r"\textasciitilde{}"),
+        ("^", r"\textasciicircum{}"),
+    ];
     let mut output: Vec<u8> = Vec::new();
+    let mut input_copy = String::from(input);
+    for (from, to) in &latex_escapes {
+        input_copy = input_copy.replace(from, to);
+    }
+    let input = &input_copy;
     let mut lines = input.split('\n').filter(|line| line.trim() != "");
     let title = lines.next().expect("Title not found");
     let author = lines.next().expect("Author not found");
