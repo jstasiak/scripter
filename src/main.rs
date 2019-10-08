@@ -65,9 +65,9 @@ fn script_to_tex(input: &str) -> String {
 
     for line in lines {
         output.extend(
-            if line[..5] == *"INT. " {
+            if line.starts_with(&*"INT. ") {
                 format!("\\intslug{{{}}}", &line[5..])
-            } else if line[..5] == *"EXT. " {
+            } else if line.starts_with(&*"EXT. ") {
                 format!("\\extslug{{{}}}", &line[5..])
             // If we have whitespace at the start of the line trim_start() will return something
             // different than the original slice and we'll know we have a dialogue.
